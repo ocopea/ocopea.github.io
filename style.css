@@ -1,0 +1,493 @@
+/* line 1, ../scss/base/_base.scss */
+main {
+    height: 100%;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 18, ../scss/base/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, ../scss/base/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* line 31, ../scss/base/_reset.scss */
+body, html {
+    height: 100%;
+}
+
+/* line 34, ../scss/base/_reset.scss */
+body {
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+    min-width: 1024px;
+}
+
+/* line 37, ../scss/base/_reset.scss */
+ol, ul {
+    list-style: none;
+}
+
+/* line 40, ../scss/base/_reset.scss */
+blockquote, q {
+    quotes: none;
+}
+
+/* line 44, ../scss/base/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* line 48, ../scss/base/_reset.scss */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* components */
+.content {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.subtitle {
+    color: rgba(55, 55, 55, 0.87);
+}
+
+button {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.scroll {
+    width: 64px;
+    height: 64px;
+    box-shadow: 0px 6px 14px 0 rgba(41, 43, 49, 0.15);
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background: #fff;
+    position: relative;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    top: 283px;
+}
+
+.button span.arrow img {
+    position: relative;
+    top: 3px;
+    left: 10px;
+}
+
+button.scroll img {
+    margin: auto;
+    width: 20px;
+    height: 15px;
+}
+
+
+
+.button {
+    width: 135.8px;
+    height: 40px;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #dd4934, #eb643a);
+    box-shadow: 0px 6px 14px 0 rgba(41, 43, 49, 0.16);
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Mukta Vaani Regular', sans-serif;
+}
+
+header {
+    min-height: 800px;
+    background: url('./assets/header-bg.png') no-repeat;
+    background-size: cover;
+}
+
+header .content {
+    text-align: center;
+    height: 100%;
+}
+
+header .content .main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.main-navigation img.logo {
+    width: 37px;
+    height: 44px;
+}
+
+.main-navigation ul.main-navigation-list {
+    display: flex;
+    height: 20px;
+}
+
+.main-navigation .main-navigation-list li {
+    margin: 0 14px;
+    text-transform: uppercase;
+    color: rgba(55, 55, 55, 0.87);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.main-navigation-list li.selected {
+    color: #dd4934;
+    border-bottom: 1px solid #dd4934;
+}
+
+.title-container {
+    text-align: center;
+    margin-top: 169px;
+    line-height: 75px;
+}
+
+.title-container .title {
+    font-size: 80px;
+    margin-bottom: 40px;
+    font-family: 'Mukta Vaani ExtraBold', sans-serif;
+    font-weight: 800;
+    color: #373737;
+}
+
+.title-container .subtitle {
+    font-size: 14px;
+    line-height: 21px;
+    width: 580px;
+    margin: auto;
+}
+
+/* icons */
+.icons-container {
+    height: 370px;
+    display: flex;
+}
+
+.content.icons {
+    padding-bottom: 20px;
+}
+
+.content section {
+    display: flex;
+}
+
+.content section .box {
+    flex: 1;
+    text-align: center;
+    margin: 15px;
+}
+
+.content section .box .img-container {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+}
+
+.content section .box .img-container img {
+    width: 20%;
+}
+
+.content section .box .title {
+    font-family: "Mukta Vaani", sans-serif;
+    color: #373737;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.content section .box .subtitle, .about p {
+    color: rgba(55, 55, 55, 0.87);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+/* DP use case */
+.use-case-page {
+    background: #fafafa;
+    width: 100%;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+}
+
+.use-case-page .image-holder{
+    width: 100%;
+    text-align:center
+
+}
+.use-case-page .content{
+    width:998px;
+    line-height: 1.81;
+    letter-spacing: 0.2px;
+}
+
+.use-case-page .content a {
+    opacity: 0.87;
+    color: rgba(0, 85, 201, 0.87);
+}
+
+
+.use-case-page .title {
+    font-family: "Mukta Vaani", sans-serif;
+    color: #373737;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.use-case-page .img {
+    width: 100%;
+}
+
+
+
+/* About */
+
+.about {
+    background: #f7f7f7;
+    height: 640px;
+    display: flex;
+}
+
+.about .content {
+    display: flex;
+    align-items: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.about .content section.text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.about .content section.text .title {
+    font-family: "Mukta Vaani", sans-serif;
+    color: #373737;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.about .content .text .text-content {
+    color: rgba(55, 55, 55, 0.87);
+    font-size: 14px;
+}
+
+.about .content .text .text-content p {
+    padding-bottom: 15px;
+}
+
+.about .content .text .text-content a {
+    opacity: 0.87;
+    color: rgba(0, 85, 201, 0.87);
+}
+
+.about .logo img {
+    height: 216px;
+}
+
+/* Data protection */
+.data-protection, .test-dev, .api {
+    height: 600px;
+    display: flex;
+}
+
+.data-protection .content, .test-dev .content, footer .content {
+    display: flex;
+    width: 100%;
+}
+
+.data-protection .content .text, .test-dev .content .text {
+    flex: 1;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.test-dev .content .text {
+    margin-top: 30px;
+}
+
+.data-protection .content .text .title, .test-dev .text .title, .api .title {
+    font-size: 48px;
+    color: #373737;
+}
+
+.data-protection .title, .test-dev .title, .api .title{
+    font-family: "Mukta Vaani", sans-serif;
+    font-size: 48px;
+    color: #373737;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.data-protection .subtitle {
+    font-family: "Mukta Vaani", sans-serif;
+    margin-bottom: 45px;
+    margin-top: 19px;
+}
+
+.data-protection .content .text .subtitle, .test-dev .content .text .subtitle, .api .subtitle, .use-case-page .text {
+    color: #373737;
+    font-size: 16px;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+.data-protection .content .text ul.list, .test-dev .content .text ul.list, .use-case-page ul.list{
+    list-style-type: disc;
+    line-height: 30px;
+}
+
+.data-protection .content .text ul.list li, .test-dev .content .text ul.list li, .use-case-page ul.list li {
+    margin-left: 17px;
+}
+
+.data-protection .content .img-computer, .test-dev .content .img-computer {
+    flex: 1;
+}
+
+.data-protection .content .img-computer img, .test-dev .content .img-computer img {
+    width: 100%;
+    margin-top: -45px;
+}
+
+.data-protection .content {
+    margin-bottom: -20px;
+    margin-top: 140px;
+}
+
+/* test & dev */
+
+.test-dev {
+    background: #363636;
+    color: #fff;
+}
+
+.test-dev .subtitle {
+    font-family: "Mukta Vaani", sans-serif;
+    margin-bottom: 45px;
+    margin-top: 19px;
+}
+
+
+.test-dev .content {
+    margin-bottom: -20px;
+}
+
+.test-dev .text {
+    margin-right: 0 !important;
+    margin-left: 55px;
+}
+
+.test-dev .text .title, .test-dev .subtitle {
+    color: #fff !important;
+}
+
+.test-dev .subtitle {
+    font-family: "Mukta Vaani Regular", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+
+/* api */
+.api {
+    text-align: center;
+    background: #f2f2f2;
+}
+
+.api .content {
+    width: 620px;
+    margin: auto;
+}
+
+/* footer */
+footer {
+    height: 95px;
+    display: flex;
+    color: rgba(55, 55, 55, 0.87);
+    font-size: 14px;
+}
+
+footer .content {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+footer .content > div {
+    text-align: center;
+}
+
+footer .content .logo {
+    flex: 1;
+}
+
+footer .content .logo img {
+    width: 55px;
+}
+
+footer .content .address {
+    flex: 0.5;
+}
+
+footer .content .icons {
+    flex: 2;
+}
+
+footer .content .icons img {
+    margin: 10px;
+}
+
+footer .content .copyrights {
+    flex: 1;
+}
+
+

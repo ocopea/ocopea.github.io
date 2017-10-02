@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ocopea - Use Cases</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Vaani:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<main>
+    <header>
+        <div class="content">
+            <div class="main-navigation">
+                <img src="assets/-e-LOGO_big.png" alt="" class="logo"/>
+                <ul class="main-navigation-list">
+                    <li><a href="index.html">about</a></li>
+                    <li class="selected"><a href="#">use cases</a></li>
+                    <li><a href="docs.html">documentation</a></li>
+                </ul>
+            </div> <!-- ./main-navigation -->
+            <div class="title-container" style="height: 500px">
+                <div class="title">
+                    <div>Ocopea</div>
+                    <div>Use Cases</div>
+                </div>
+            </div>
+        </div> <!-- ./content -->
+    </header>
+    <div class="use-case-page">
+
+
+        <div class="content">
+
+            <div class="title">
+                Developer Copies
+            </div>
+            <p>
+                Effective use of application copies can boost the development process agility and product quality. With
+                microservices architecture this becomes even more critical as applications tend to have
+                many small databases. Ocopea comes to the rescue and makes the developers life simpler by
+                integrating application copy re-purposing into developer workflows and tools.
+            </p>
+            <p>
+                Lets walk through some of the scenarios using the Ocopea UI.
+                <br/>
+                <br/>
+            </p>
+            <br/>
+            <br/>
+            <div class="title">
+                Bug fixing
+            </div>
+            <p>
+                My name is Michael, and I am testing the latest version of my organization's app named lets-chat.
+                Lets-chat is an fun chat app that uses mongodb to store all of it's data.
+                Today I managed to reproduce a sneaky rare bug that is very annoying to customers.
+                Exited with my success, I planned sending the mail to the entire organization saying:
+                Don't touch this cluster until a developer reviews the bug and fixes it!
+                Then I plan on leaving the app running, and go have a snack as my environment is pending.
+                <br/>
+                <br/>
+                Oh.. Copy.. but I have Ocopea!
+                <br/>
+                <br/>
+                With Ocopea it is simpler than ever to freeze application state and transfer it between engineers.
+                All we have to do is simply create a "saved application image" and share it.
+                <br/>
+                <br/>
+            </p>
+            <div class="image-holder">
+                <img src="assets/save-image-button.png" width="600px" alt="create saved image" />
+            </div>
+            <br/>
+            <br/>
+            <p>
+                When creating the image, users name it, label it, and add comments so that it will be easy to
+                locate in the future.
+            </p>
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <img src="assets/save-image-dialog.png" width="400px" alt="supply image metadata" />
+            </div>
+            <br/>
+            <br/>
+            <p>
+                In the background, Ocopea orchestrator kicks in and creates a copy of all the components involved
+                in running the app: Container versions, kubernetes deployment configuration
+                and a physical copy of all data services involved - in our case one instance of mongodb.
+                Copies are stored on a copy repository configured by the user.
+                <br/>
+                <br/>
+                Once the image is persisted it is stored in the Ocopea image catalog and can be shared with
+                other team members. 
+            </p>
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <img src="assets/got-it.png" width="700px">
+            </div>
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <img src="assets/share-image.png" width="400px">
+            </div>
+            <br/>
+            <br/>
+            <p>
+                Restoring the Ocopea image is as easy as creating it and can be done with a click. Read on for
+                more details. 
+            </p>
+            <br/>
+            <p>
+                    Ocopea supports several bug tracking tools, but it can be extended to integrate with anything.
+            </p>
+            <br/>
+            <br/>
+            <div class="title">
+                Agile process
+            </div>
+            <p>
+                Modern engineering groups are using some sort of process to manage the
+                deployments of cloud native apps. With short iterations, and frequent deployments -
+                the ability to have a rolling application instance with fresh and relevant data can improve the
+                process and boost quality and productivity.
+            </p>
+            <br/>
+            <br/>
+            <p>
+                Ocopea's saved images fits perfectly into this process by allowing developers and other stake holders
+                to store and share application in specific states.
+                Product owners for example, can use a customer database and manipulate it with data so that developers
+                at the end of the sprint could demo the features using a pre-defined application instance with enough
+                data to cover the use case. Developers can always pick an image pre-loaded with large quantities of
+                data in order to demonstrate how new features do not degrade the app performance.
+                App images can be used by everyone in the org to demo the latest state of the app - all with relevant
+                data populated and up-to-date.
+            </p>
+
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <img src="assets/choose-image.png" width="664">
+            </div>
+            <br/>
+            <br/>
+            <p>
+                When a developer uses the Ocopea UI in order to run a new copy of the app he can choose to populate
+                the application instance with data using one of three options:
+            </p>
+
+            <ul class="list">
+                <li>Blank - run the app with empty initialized schemas</li>
+                <li>Saved Image - populate data using one of the images from the Ocopea saved images catalog</li>
+            </ul>
+            <br/>
+            <p>
+                Once an image is created, developers can choose target cluster/site to be used. Ocopea will present
+                only sites that can support the deployment. for example - if the application have an S3 dependency,
+                only sites that support that can be used (AWS S3, minio on premises etc..). In addition, Ocopea
+                will let you select the service plan to be used. This is useful since for most cases - test and dev
+                can use service plans with reduced SLA.
+
+            </p>
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <img src="assets/deployment-config.png" alt="selecting service plans"/>
+            </div>
+            <br/>
+            <br/>
+            <p>
+
+
+                By default Ocopea will configure the application exactly the same  as it was when the copy was
+                make. Users can however make changes to the configuration for example by changing some of the
+                components versions or even creating partial deployments - all according to what is needed.
+                Ocopea integrates with public and private docker registries and maven rpositories allowing the user
+                to pick from the latest images available.
+            </p>
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <!--suppress CheckImageSize -->
+                <img src="assets/configure-hackathon.png" width="664px" alt="app instance configuration" />
+            </div>
+            <br/>
+            <br/>
+            <p>
+                Having the ability to provision a full running app including it's data with a single click
+                is huge deal for developers. This replaces the process of going though ops to provision the instances,
+                asking the backup admin to restore the data, coordinating with DBAs to install the database binaries
+                and finally deploying the application and configuring it to use the restored services.
+                If developers used to think twice before validating their fixes with various sets of data from
+                production systems - with Ocopea - there is no hesitation!
+            </p>
+            <br/>
+            <br/>
+
+
+            <div class="title">
+                Automated tests
+            </div>
+            <p>
+                When deploying to production frequently, automated tests are critical. A big weak point of
+                automated tests has always been the way it generates application data. When trying to run a system
+                level test that involves more than one service there are several ways to generate data for the tests.
+                To name a few:
+            </p>
+            <ul class="list">
+                <li>
+                    Starting from scratch and generating data through the application api
+                </li>
+                <li>
+                    Each service runs database scripts to load data
+                </li>
+                <li>
+                    Using a dedicated production copy environment cluster and cleaning up afterward
+                </li>
+            </ul>
+            <br/>
+            <p>
+                All methods have caveates and usually result in insufficient test quality,
+                testing against schemas that are not up-to-date and/or having a messy process of maintaining
+                historical upgraded instances.
+            </p>
+            <br/>
+            <br/>
+            <p>
+                Ocopea offers a different path. Using the Ocopea API, developers can insert Ocopea into the CI/CD
+                pipeline and use it to orchestrate up-to-date application copies with various sets of pre-defined
+                data sets. Not only will test quality improve, it will also
+                allow developers to debug failing tests on their own environment with identical data. Developers
+                can now easily add new test use cases based on production data that can be re-executed on every build.
+                Instead of maintaining upgradable test instances, there is only one schema upgrade process - the one
+                used in production is also used in tests.
+
+            </p>
+
+            <br/>
+            <br/>
+            <div class="title">
+                Clusters Usage Auditing
+            </div>
+            <p>
+                Cloud native platforms simplifies deployments by using shared infrastructure among developers.
+                If in the past developers used their own VMs to do development and debugging,
+                with cloud native they simply deploy their instances into a shared cluster.
+                While this simplifies the lives of developers, it can also easily lead to resource over utilization and
+                lack of visibility into what the resources are being used for.
+                While modern platforms have introduced concepts of quota and billing, it is always comes
+                down to a single service. without visibility into the entire application deployment and it's usage
+                - it is difficult to make sense of what is going on out there in the services zoo.
+            </p>
+            <br/>
+            <br/>
+            <p>
+                In our vision we see application centric quota management. Implementing this requires standardization
+                of the service consumption api so we can calculate usage of an application consisting of stateless
+                services side by side managed SaaS services. Please join us in our
+                <a href="standardization.html">call for action for standardization</a>.
+            </p>
+            <br/>
+            <br/>
+            <div class="image-holder">
+                <!--suppress CheckImageSize -->
+                <img src="assets/app-centric-quota.png" width="800px" alt="app instance configuration" />
+            </div>
+
+            <br/>
+            <br/>
+            <p>
+                In the mean time Ocopea can still display application centric usage metrics and can be used
+                to get better visibility into the application clusters.
+            </p>
+            <br/>
+            <br/>
+            <div class="title">
+                Safe upgrade rollbacks
+            </div>
+            <p>
+                With modern software, the more can automate - the better. That said, at least for now -
+                our business applications code is still being typed by human developers.
+                With frequent deployments to production, Errors in production is only a matter of time.
+                Ocopea allows developers to hook into the Application copy orchestrator via api and make application
+                copy before each upgrade. the copy can be used to roll back when needed.
+            </p>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+        </div>
+
+
+        <footer>
+            <div class="content">
+                <div class="logo">
+                    <img src="assets/-e-LOGO_big.png" alt=""/>
+                </div>
+                <div class="address">
+                    <p>
+                    </p>
+                    <p><a href="https://ocopea.github.io">ocopea.github.io</a></p>
+                </div>
+                <div class="icons">
+                    <img src="assets/slack.png" alt="">
+                    <a href="https://github.com/ocopea/kubernetes"><img src="assets/github.png" alt=""></a>
+                    <img src="assets/blogger.png" alt="">
+                    <img src="assets/twitter.png" alt="">
+                </div>
+                <div class="copyrights">© 2017 All rights reserved</div>
+            </div>
+        </footer>
+</main>
+</body>
+</html>
