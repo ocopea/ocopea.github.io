@@ -17,7 +17,7 @@
             <div class="main-navigation">
                 <img src="assets/-e-LOGO_big.png" alt="" class="logo"/>
                 <ul class="main-navigation-list">
-                    <li><a href="jndex.html">about</a></li>
+                    <li><a href="index.html">about</a></li>
                     <li class="selected"><a href="#">use cases</a></li>
                     <li><a href="docs.html">documentation</a></li>
                 </ul>
@@ -30,24 +30,21 @@
             </div>
         </div> <!-- ./content -->
     </header>
+
     <div class="use-case-page">
-
-
         <div class="content">
-
             <div class="title">
                 Developer Copies
             </div>
             <p>
-                Effective use of application copies can boost the development process agility and product quality. With
+                Effective use of application copies can boost the development process agility and product quality. With a
                 microservices architecture this becomes even more critical as applications tend to have
-                many small databases. Ocopea comes to the rescue and makes the developers life simpler by
-                integrating application copy re-purposing into developer workflows and tools.
+                many small databases. Ocopea comes to the rescue and makes the developer's life simpler by
+                enabling application copy re-purposing into developer workflows and tools.
             </p>
+            <br/>
             <p>
-                Lets walk through some of the scenarios using the Ocopea UI.
-                <br/>
-                <br/>
+                Let's walk through some of the scenarios using the Ocopea UI.
             </p>
             <br/>
             <br/>
@@ -55,12 +52,12 @@
                 Bug fixing
             </div>
             <p>
-                My name is Michael, and I am testing the latest version of my organization's app named lets-chat.
-                Lets-chat is an fun chat app that uses mongodb to store all of it's data.
+                I am testing the latest version of my organization's app named Lets-chat.
+                Lets-chat is a chat app that uses mongodb to store all of its data.
                 Today I managed to reproduce a sneaky rare bug that is very annoying to customers.
-                Exited with my success, I planned sending the mail to the entire organization saying:
+                Excited with my success, I plan on sending the mail to the entire organization saying:
                 Don't touch this cluster until a developer reviews the bug and fixes it!
-                Then I plan on leaving the app running, and go have a snack as my environment is pending.
+                Then I plan to leave the app running, and go have a snack as my environment is pending.
                 <br/>
                 <br/>
                 Oh.. Copy.. but I have Ocopea!
@@ -88,7 +85,7 @@
             <br/>
             <br/>
             <p>
-                In the background, Ocopea orchestrator kicks in and creates a copy of all the components involved
+                In the background, Ocopea orchestration kicks in and creates a copy of all the components involved
                 in running the app: Container versions, kubernetes deployment configuration
                 and a physical copy of all data services involved - in our case one instance of mongodb.
                 Copies are stored on a copy repository configured by the user.
@@ -110,8 +107,8 @@
             <br/>
             <br/>
             <p>
-                Restoring the Ocopea image is as easy as creating it and can be done with a click. Read on for
-                more details. 
+                Restoring the Ocopea image is as easy as creating it and can be done with a click. Developers
+                can restore the images to their own environment for debugging purpose.
             </p>
             <br/>
             <p>
@@ -140,7 +137,6 @@
                 App images can be used by everyone in the org to demo the latest state of the app - all with relevant
                 data populated and up-to-date.
             </p>
-
             <br/>
             <br/>
             <div class="image-holder">
@@ -150,9 +146,8 @@
             <br/>
             <p>
                 When a developer uses the Ocopea UI in order to run a new copy of the app he can choose to populate
-                the application instance with data using one of three options:
+                the application instance with data using one of these options:
             </p>
-
             <ul class="list">
                 <li>Blank - run the app with empty initialized schemas</li>
                 <li>Saved Image - populate data using one of the images from the Ocopea saved images catalog</li>
@@ -160,11 +155,10 @@
             <br/>
             <p>
                 Once an image is created, developers can choose target cluster/site to be used. Ocopea will present
-                only sites that can support the deployment. for example - if the application have an S3 dependency,
+                only sites that can support the deployment. for example - if the application has an S3 dependency,
                 only sites that support that can be used (AWS S3, minio on premises etc..). In addition, Ocopea
                 will let you select the service plan to be used. This is useful since for most cases - test and dev
                 can use service plans with reduced SLA.
-
             </p>
             <br/>
             <br/>
@@ -174,12 +168,10 @@
             <br/>
             <br/>
             <p>
-
-
-                By default Ocopea will configure the application exactly the same  as it was when the copy was
-                make. Users can however make changes to the configuration for example by changing some of the
-                components versions or even creating partial deployments - all according to what is needed.
-                Ocopea integrates with public and private docker registries and maven rpositories allowing the user
+                By default Ocopea will configure the application exactly the same as it was when the copy was
+                made. Users can, however, make changes to the configuration, for example, by changing some of the
+                component versions or even creating partial deployments - all according to what is needed.
+                Ocopea integrates with public and private docker registries and maven repositories allowing the user
                 to pick from the latest images available.
             </p>
             <br/>
@@ -191,7 +183,7 @@
             <br/>
             <br/>
             <p>
-                Having the ability to provision a full running app including it's data with a single click
+                Having the ability to provision a full running app including its data with a single click
                 is huge deal for developers. This replaces the process of going though ops to provision the instances,
                 asking the backup admin to restore the data, coordinating with DBAs to install the database binaries
                 and finally deploying the application and configuring it to use the restored services.
@@ -200,8 +192,6 @@
             </p>
             <br/>
             <br/>
-
-
             <div class="title">
                 Automated tests
             </div>
@@ -213,7 +203,7 @@
             </p>
             <ul class="list">
                 <li>
-                    Starting from scratch and generating data through the application api
+                    Starting from scratch and generating data through the application API
                 </li>
                 <li>
                     Each service runs database scripts to load data
@@ -224,7 +214,7 @@
             </ul>
             <br/>
             <p>
-                All methods have caveates and usually result in insufficient test quality,
+                All methods have caveats and usually result in insufficient test quality,
                 testing against schemas that are not up-to-date and/or having a messy process of maintaining
                 historical upgraded instances.
             </p>
@@ -238,29 +228,28 @@
                 can now easily add new test use cases based on production data that can be re-executed on every build.
                 Instead of maintaining upgradable test instances, there is only one schema upgrade process - the one
                 used in production is also used in tests.
-
             </p>
-
             <br/>
             <br/>
             <div class="title">
-                Clusters Usage Auditing
+                Increase Resource Usage Visibility
             </div>
             <p>
-                Cloud native platforms simplifies deployments by using shared infrastructure among developers.
+                Cloud native platforms simplify deployments by using shared infrastructure among developers.
                 If in the past developers used their own VMs to do development and debugging,
-                with cloud native they simply deploy their instances into a shared cluster.
-                While this simplifies the lives of developers, it can also easily lead to resource over utilization and
+                with cloud native they simply deployed their instances into a shared cluster.
+                While this simplifies the lives of developers, it can also easily lead to resource over-utilization and
                 lack of visibility into what the resources are being used for.
-                While modern platforms have introduced concepts of quota and billing, it is always comes
-                down to a single service. without visibility into the entire application deployment and it's usage
+                Without visibility into the entire application deployment and its usage
                 - it is difficult to make sense of what is going on out there in the services zoo.
+                Allowing drill-down into which services are being used by developers can lead to significant
+                cost reduction.
             </p>
             <br/>
             <br/>
             <p>
-                In our vision we see application centric quota management. Implementing this requires standardization
-                of the service consumption api so we can calculate usage of an application consisting of stateless
+                In our vision we see application-centric quota management. Implementing this requires standardization
+                of the service consumption API so we can calculate usage of an application consisting of stateless
                 services side by side managed SaaS services. Please join us in our
                 <a href="standardization.html">call for action for standardization</a>.
             </p>
@@ -270,7 +259,6 @@
                 <!--suppress CheckImageSize -->
                 <img src="assets/app-centric-quota.png" width="800px" alt="app instance configuration" />
             </div>
-
             <br/>
             <br/>
             <p>
@@ -280,26 +268,20 @@
             <br/>
             <br/>
             <div class="title">
-                Safe upgrade rollbacks
+                Safe upgrade process
             </div>
             <p>
-                With modern software, the more can automate - the better. That said, at least for now -
-                our business applications code is still being typed by human developers.
-                With frequent deployments to production, Errors in production is only a matter of time.
-                Ocopea allows developers to hook into the Application copy orchestrator via api and make application
-                copy before each upgrade. the copy can be used to roll back when needed.
+                With modern software, the more one can automate - the better. That said, at least for now -
+                our business application code is still being typed by human developers.
+                With frequent deployments to production, errors in production is only a matter of time.
+                Ocopea allows developers to hook into the application copy orchestrator via API and make application
+                copy before each upgrade and perform tests with latest code on fresh production data.
             </p>
-
             <br/>
             <br/>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-
         </div>
-
 
         <footer>
             <div class="content">
@@ -313,11 +295,11 @@
                 </div>
                 <div class="icons">
                     <img src="assets/slack.png" alt="">
-                    <a href="https://github.com/ocopea/kubernetes"><img src="assets/github.png" alt=""></a>
+                    <a href="https://github.com/ocopea"><img src="assets/github.png" alt=""></a>
                     <img src="assets/blogger.png" alt="">
                     <img src="assets/twitter.png" alt="">
                 </div>
-                <div class="copyrights">© 2017 All rights reserved</div>
+                <div class="copyrights">Copyright © 2017 Dell Inc. or its subsidiaries. All Rights Reserved</div>
             </div>
         </footer>
 </main>
