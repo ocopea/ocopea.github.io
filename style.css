@@ -76,6 +76,8 @@ a {
     color: inherit;
 }
 
+section { overflow: auto; }
+
 /* components */
 .content {
     max-width: 1024px;
@@ -104,8 +106,6 @@ button.scroll {
     background: #fff;
     position: relative;
     top: 30px;
-    display: flex;
-    justify-content: center;
     margin: auto;
     top: 283px;
 }
@@ -121,8 +121,6 @@ button.scroll img {
     width: 20px;
     height: 15px;
 }
-
-
 
 .button {
     width: 135.8px;
@@ -141,7 +139,7 @@ button.scroll img {
 header {
     min-height: 800px;
     background: url('./assets/header-bg.png') no-repeat;
-    background-size: cover;
+    background-size: cover;    
 }
 
 header .content {
@@ -151,7 +149,7 @@ header .content {
 
 header .content .main-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;    
     align-items: center;
     height: 65px;
 }
@@ -202,12 +200,14 @@ header .content .main-navigation {
 
 /* icons */
 .icons-container {
-    height: 370px;
+    line-height: 370px;
     display: flex;
 }
 
 .content.icons {
     padding-bottom: 20px;
+    display: flex;
+    padding: 100px 0;
 }
 
 .content section {
@@ -215,19 +215,22 @@ header .content .main-navigation {
 }
 
 .content section .box {
-    flex: 1;
+    flex: 1 1 auto;    
     text-align: center;
     margin: 15px;
+    line-height: 43px;
 }
 
 .content section .box .img-container {
-    display: flex;
+    display: flex; 
     height: 80px;
-    justify-content: center;
+    justify-content: center; 
 }
 
-.content section .box .img-container img {
-    width: 20%;
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .content section .box .img-container {
+        display: block;         
+    }  
 }
 
 .content section .box .title {
@@ -302,10 +305,13 @@ header .content .main-navigation {
 }
 
 .about .content section.text {
-    display: flex;
     flex-direction: column;
     margin-right: 50px;
 }
+
+.about .content section.logo {
+     flex: 1 0 auto; 
+}    
 
 .about .content section.text .title {
     font-family: "Mukta Vaani", sans-serif;
@@ -352,6 +358,12 @@ header .content .main-navigation {
 
 .test-dev .content .text {
     margin-top: 30px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .test-dev .content {
+        margin-top: 97px;
+    }    
 }
 
 .data-protection .content .text .title, .test-dev .text .title, .api .title {
@@ -445,7 +457,13 @@ header .content .main-navigation {
 
 .api .content {
     width: 620px;
-    margin: auto;
+    margin: auto;    
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .api .content {
+        padding-top: 10%;
+    }     
 }
 
 /* footer */
