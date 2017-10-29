@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>How It Works</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Vaani:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<main>
+    <header>
+        <div class="content">
+            <div class="main-navigation">
+                <img src="assets/-e-LOGO_big.png" alt="" class="logo"/>
+                <ul class="main-navigation-list">
+                    <li><a href="index.html">about</a></li>
+                    <li><a href="use-cases.html">use cases</a></li>
+                    <li class="selected"><a href="how-it-works.html">how it works</a></li>
+                    <li><a href="http://ocopea-documentation.readthedocs.io/en/latest/">documentation</a></li>
+                </ul>
+            </div> <!-- ./main-navigation -->
+            <div class="title-container" style="height: 500px">
+                <div class="title">
+                    <div>How it</div>
+                    <div>Works</div>
+                </div>
+            </div>
+        </div> <!-- ./content -->
+    </header>
+    <div class="use-case-page">
+        <div class="content">
+            <br/>
+            <br/>
+            <div class="title">Application Copies</div>
+            <p>
+                Ocopea's key feature is the ability to create and restore full application copies of cloud native apps.
+                Ocopea is able to do this thanks to two key ingredients:
+            </p>
+            <br/>
+            <ul class="list">
+                <li>Understanding the cloud native app topology</li>
+                <li>Abstraction of the service consumption API (Ocopea Brokers)</li>
+            </ul>
+            <br/>
+
+            <div class="title">Application topology</div>
+            <p>
+                In order for Ocopea to take application copies, it first needs to understand the application topology:
+                what components it is built of and what is the interaction between them. Ocopea differentiates between
+                two types of components: <span style="font-weight: bold">stateless components</span> (app service) and
+                <span style="font-weight: bold">stateful components</span> (infrastructure services).
+                Mostly thanks to the ability to easily scale stateless microservices this has become a common
+                distinction for cloud native apps.
+                In addition, while it is popular to run the stateless microservices using container orchestrators/PaaS -
+                many organizations prefer delegating the standard infrastructure services to
+                either SaaS (e.g. AWS RDS) or DevOps (e.g. Oracle database on premises).
+
+                <br/>
+                <br/>
+
+                Lets walk through an example:
+            </p>
+
+            <br/>
+            <br/>
+
+            <div class="image-holder">
+                <img src="assets/hackathon-app-template.png"
+                     width="517px"
+                     alt="Ocopea high level components"
+                />
+            </div>
+
+            <br/>
+            <br/>
+
+            <p>
+                The application topology diagram above describes our basic sample hackathon application.
+                The application is built of one app service: The "hackathon service", written in java delivered as a
+                docker container, and has two infrastructure service dependencies:
+                an S3 service for storing documents and a Postgres database for storing hackathon ideas metadata.
+                The hackathon service is the application entry point -
+                meaning application users can interact with it via the web.
+                <br/>
+                <br/>
+                In order to make a copy of the entire hackathon application state and later restore it on a different
+                environment,
+                Ocopea needs the ability to make copies of each individual component configuration and data:
+                <br/>
+            </p>
+            <ul class="list">
+                <li>
+                    The hackathon docker image version that is used including the configuration (port bindings,
+                    environment variables etc.)
+                </li>
+                <li>
+                    The postgres database - hackathon schemas, users and the configuration allowing the hackathon
+                    service to access it (bindings)
+                </li>
+                <li>
+                    The S3 service - hackathon buckets data, and the configuration allowing the hackathon service to
+                    access it (bindings)
+                </li>
+            </ul>
+            <br/>
+            <p>
+                The ability to both create copies and later restore individual components falls under the responsibility
+                of the "Ocopea Brokers".
+
+            </p>
+
+            <br/>
+            <br/>
+
+            <div class="title">Ocopea Brokers</div>
+
+            <p>
+                Ocopea brokers are the components that allow Ocopea to interact with the world.
+                Deployment of containers, provisioning and creation of infrastructure services copies is
+                all delegated to brokers.
+                <br/>
+                Brokers are managed by the ocopea component called the <span style="font-weight: bold">Site</span>.
+                Every Ocopea site is responsible for a local geographical location - either a public cloud availability zone or an on premises datacenter.
+                Sites can be aggregated by a central component called the Ocopea <span style="font-weight: bold">Hub</span>.
+
+                <br/>
+                There are three types of brokers:
+            </p>
+            <br/>
+            <ul class="list">
+                <li>
+                    PSB - PaaS/Container Orchestrator brokers
+                </li>
+                <li>
+                    DSB - Data service brokers
+                </li>
+                <li>
+                    CRB - Copy repository brokers
+                </li>
+            </ul>
+
+            <br/>
+            <div class="image-holder">
+                <img src="assets/ocopea-components.png"
+                     width="1024px"
+                     alt="Ocopea high level components"
+                />
+            </div>
+
+            <br/>
+            <br/>
+            <div class="title">PSB</div>
+            <p>
+                The PSB is responsible for communicating with the PaaS or the container orchestrator. It is used by
+                the Ocopea site to deploy the stateless containers and bind them to infrastructure services
+                (Data Services)
+                <br/>
+                Ocopea has built in PSBs for both
+                <a href="https://github.com/ocopea/kubernetes/tree/master/k8spsb">Kubernetes</a> and
+                <a href="https://github.com/ocopea/cloudfoundry/tree/master/cf-psb">Cloud Foundry</a>
+            </p>
+            <br/>
+            <br/>
+            <div class="title">DSB</div>
+            <p>
+                The DSB is responsible for communicating with stateful services. Stateful services can run within the
+                boundaries of the platform the app is running, or externally.
+                <br/>
+                The two main tasks of a DSB are:
+                <br/>
+            </p>
+            <ul class="list">
+                <li>
+                    Provision a new stateful service instance
+                </li>
+                <li>
+                    Create a copy of the service to a copy repository
+                </li>
+            </ul>
+
+            <p>
+                Every service that implement the DSB API can be used by Ocopea. The API and samples can be found
+                <a href="https://github.com/ocopea/orcs/tree/master/dsb">here</a>
+                <br/>
+                <br/>
+                Examples of services that require DSBs:
+            </p>
+            <ul class="list">
+                <li>
+                    AWS S3 DSB
+                </li>
+                <li>
+                    Oracle DSB
+                </li>
+                <li>
+                    Docker volume mount DSB
+                </li>
+            </ul>
+            <p>
+                As you can see in our <a href="standardization.html">standardization</a> page,
+                we keep our eye open for in the field of service consumption.
+            </p>
+            <br/>
+            <br/>
+
+
+            <div class="title">CRB</div>
+            <p>
+                The CRB is responsible for listing and providing connectivity with copy repositories.
+                Copy repositories are where Ocopea stateful services store copies. Ocopea has out-of-the box a postgres
+                and a filesystem implementation of CRB.
+                <br/>
+                Examples of services that require CRBs:
+            </p>
+            <ul class="list">
+                <li>
+                    AWS Glacier/S3 CRB
+                </li>
+                <li>
+                    VTL DSB
+                </li>
+            </ul>
+            <p>
+                For more information regarding data path protocols and API see
+                <a href="https://github.com/ocopea/orcs/tree/master/crb">the CRB project</a>.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div class="content">
+            <div class="logo">
+                <img src="assets/-e-LOGO_big.png" alt=""/>
+            </div>
+            <div class="address">
+                <p>
+                </p>
+                <p><a href="https://ocopea.github.io">ocopea.github.io</a></p>
+            </div>
+            <div class="icons">
+                <img src="assets/slack.png" alt="">
+                <a href="https://github.com/ocopea"><img src="assets/github.png" alt=""></a>
+                <img src="assets/blogger.png" alt="">
+                <a href="https://twitter.com/ocopea"><img src="assets/twitter.png" alt=""/></a>
+            </div>
+            <div class="copyrights">Copyright © 2017 Dell Inc. or its subsidiaries. All Rights Reserved</div>
+        </div>
+    </footer>
+</main>
+</body>
+</html>
