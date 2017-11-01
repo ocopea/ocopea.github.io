@@ -60,7 +60,7 @@
 
             <p>
                 I am testing the latest version of my organization's app named Lets-chat.
-                Lets-chat is a chat app that uses mongodb to store all of its data.
+                Lets-chat is a chat app that uses MongoDB to store all of its data.
                 Today I managed to reproduce a sneaky rare bug that is very annoying to customers.
                 Excited with my success, I plan on sending the mail to the entire organization saying:
                 Don't touch this cluster until a developer reviews the bug and fixes it!
@@ -93,8 +93,8 @@
             <br/>
             <p>
                 In the background, Ocopea orchestration kicks in and creates a copy of all the components involved
-                in running the app: Container versions, kubernetes deployment configuration
-                and a physical copy of all data services involved - in our case one instance of mongodb.
+                in running the app: Container versions, Kubernetes deployment configuration
+                and a physical copy of all data services involved - in our case one instance of MongoDB.
                 Copies are stored on a copy repository configured by the user.
                 <br/>
                 <br/>
@@ -163,7 +163,7 @@
             <p>
                 Once an image is created, developers can choose target cluster/site to be used. Ocopea will present
                 only sites that can support the deployment. for example - if the application has an S3 dependency,
-                only sites that support that can be used (AWS S3, minio on premises etc..). In addition, Ocopea
+                only sites that support that can be used (AWS S3, minio on premises etc.). In addition, Ocopea
                 will let you select the service plan to be used. This is useful since for most cases - test and dev
                 can use service plans with reduced SLA.
             </p>
